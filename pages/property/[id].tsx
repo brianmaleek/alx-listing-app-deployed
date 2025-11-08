@@ -19,7 +19,7 @@ export default function PropertyDetailPage() {
       try {
         setLoading(true);
         setError(null);
-        const response = await axios.get(`/api/properties/${id}`);
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/properties/${id}`);
         setProperty(response.data);
       } catch (error) {
         console.error("Error fetching property details:", error);
