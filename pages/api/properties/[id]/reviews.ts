@@ -1,3 +1,5 @@
+import type { NextApiRequest, NextApiResponse } from "next";
+
 const reviewsData = {
   "1": [
     {
@@ -48,7 +50,10 @@ const reviewsData = {
  * @param {Object} req - Next.js API request object
  * @param {Object} res - Next.js API response object
  */
-export default function handler(req, res) {
+export default function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   if (req.method !== "GET") {
     return res.status(405).json({ message: "Method not allowed" });
   }
